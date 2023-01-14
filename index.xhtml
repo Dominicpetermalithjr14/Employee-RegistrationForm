@@ -7,19 +7,38 @@
 <h:head>
         <title>Employee Registration Form</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+           .Bimage{background-image: url("resources/images/cf.jpg");}
+           .one h1{
+               font-size: 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 3em;
+  padding-left: 0.25em;
+  color: red;
+  padding-bottom: 10px;
+           }  
+          
+        </style>
         
     </h:head>
-    <h:body>
+    <h:body styleClass="Bimage">
         <h:form>
             <div align="center">
+                <div>
   <h1>Employee Registration Form</h1>
+                </div>
   <h:panelGrid columns="2">
+      <div>
       <h:outputLabel value="firstName">
           <h:inputText value="#{employee2.firstName}">
               <f:validateRequired/>
               <f:validateLength minimum="5" maximum="10"/>
           </h:inputText>
       </h:outputLabel>
+      </div>
+      <div>
       <h:outputLabel value="lastName">
           <h:inputText value="#{employee2.lastName}">
               <f:validateRequired/>
@@ -27,18 +46,24 @@
           </h:inputText>
           
       </h:outputLabel>
+          </div>
+      <div>
       <h:outputLabel value="username">
           <h:inputText value="#{employee2.username}">
               <f:validateRequired/>
               <f:validateLength minimum="3" maximum="10"/>
           </h:inputText>
           </h:outputLabel>
+      </div>
+      <div>
           <h:outputLabel value="password">
               <h:inputSecret value="#{employee2.password}">
               <f:validateRegex pattern="^([A-Za-z]*)$"/>
               <f:validateLength minimum="8" maximum="14"/>
           </h:inputSecret>     
           </h:outputLabel>
+      </div>
+      <div>
       <h:outputLabel value="address">
           <h:inputText value="#{employee2.address}">
               <f:validateRequired/>
@@ -46,6 +71,8 @@
           </h:inputText>
           
       </h:outputLabel>
+      </div>
+      <div>
       <h:outputLabel value="contact">
           <h:inputText value="#{employee2.contact}">
               <f:validateRequired/>
@@ -53,8 +80,9 @@
           </h:inputText>
           
       </h:outputLabel>
+      </div>
      </h:panelGrid>
-  <h:commandButton id="Login" value="Login" action="#{employee2.goLogin()}">
+  <h:commandButton  value="Submit" action="#{employee2.goLogin()}">
                    </h:commandButton>
             </div>
     </h:form>
